@@ -1,0 +1,3 @@
+[submodule "sft/FastChat"]
+	path = sft/FastChat
+	url = https://github.com/PageIV/FastChat.git

@@ -1,0 +1,12 @@
+packaging
+ninja
+torch
+transformers>=4.31.0
+deepspeed
+peft
+bitsandbytes
+scipy
+sentencepiece
+protobuf
+wandb
+einops

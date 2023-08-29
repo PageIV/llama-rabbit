@@ -42,11 +42,11 @@ Most of the arguments used is clear if you have previous experience with fintuni
 
 An important consideration for the user is to determine the maximum model size that can be trained using the current system. Another significant issue is determining the optimal configuration for models of different scales. Below, I will provide some settings I have used and the related experiences
 
-|Model_size| Stage | Max_batch_size | Qlora? |
-|----------|----------|---------|------------|
-| 7b  | zero2 | 16 | true  |
-| 13b | zero2 | 8  | true  |
-| 70b | zero3 | 2  | false |
+|Model Size| Lora Rank | Stage | Max Batch Size | Qlora? |
+|----------|-----------|-------|----------------|--------|
+| 7b       | 8         | zero2 | 16             | true   |
+| 13b      | 16        | zero2 | 8              | true   |
+| 70b      | 64        | zero3 | 2              | false  |
 
 
 ## 👀  Others

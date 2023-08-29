@@ -21,6 +21,9 @@ The Llama-rabbit is a combination of multiple open sources utilized for the purp
 You can acquire an image from [here](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch/tags)  
 ### Envs
 ```bash
+# pull the repo and submodules
+git clone --recursive https://github.com/PageIV/llama-rabbit.git
+
 # create conda enviroment && setup pip source
 conda create -n llama-rabbit python=3.9 -y
 conda activate llama-rabbit
@@ -32,8 +35,11 @@ pip install -r requirements.txt
 # Install FastChat 
 pip install "sft/FastChat[model_worker]"
 
-# Install flash-attention, make sure you can access github
-pip install flash-attn --no-build-isolation
+# Install flash-attention. Make sure you can access github and need some patience
+pip install "flash-attn>=2.0" --no-build-isolation
+
+# Install AutoGPTQ
+pip install "quantization/AutoGPTQ"
 ```
 
 ## Finetuning

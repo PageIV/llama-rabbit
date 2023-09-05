@@ -1,3 +1,9 @@
 [submodule "sft/FastChat"]
 	path = sft/FastChat
 	url = https://github.com/PageIV/FastChat.git
+[submodule "rabbit_tgi"]
+	path = serving/TGI
+	url = https://github.com/PageIV/text-generation-inference.git
+[submodule "rabbit_autogptq"]
+	path = quantization/AutoGPTQ
+	url = https://github.com/PageIV/AutoGPTQ.git

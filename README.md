@@ -41,6 +41,11 @@ pip install "flash-attn>=2.0" --no-build-isolation
 # Install AutoGPTQ
 pip install "quantization/AutoGPTQ"
 ```
+If the downloading process is very slow, you can use .yml to install. For example, check https://github.com/Dao-AILab/flash-attention/releases for flash-atten and https://github.com/PanQiWei/AutoGPTQ/releases for auto-gptq. Then
+```
+pip install name.whl
+```
+
 
 ## Finetuning
 You can find the arguments for fine-tuning [here](sft/README.md).

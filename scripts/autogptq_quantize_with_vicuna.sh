@@ -1,0 +1,11 @@
+CUDA_VISIBLE_DEVICES="0,1,2,3,4,5,6,7" python quantization/AutoGPTQ/examples/quantization/quant_with_vicuna.py \
+--pretrained_model_dir <your pretrained_model_dir> \
+--quantized_model_dir <your output quantized_model_dir> \
+--data_path ../data/sharegpt4/shargpt_gpt4_train.json \
+--bits 4 \
+--group_size 128 \
+--desc_act \
+--use_triton \
+--num_samples 16 \
+--quant_batch_size 1 \
+--save_and_reload 

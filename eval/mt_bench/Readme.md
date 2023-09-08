@@ -1,7 +1,7 @@
 # Evaluation
 用MT-Bench进行测试
 ```
-cd ../sft/FastChat/fastchat/llm_judge
+cd ../../sft/FastChat/fastchat/llm_judge
 ```
 然后流程同https://github.com/lm-sys/FastChat/tree/main/fastchat/llm_judge。但注意要使用openai keys，可在shell环境变量中设置
 ```

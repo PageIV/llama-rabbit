@@ -39,6 +39,8 @@ Most of the arguments used is clear if you have previous experience with fintuni
 | --lora_r                                               | lora rank                                                    | Usually, LoRA needs a larger learning rate for better convergence                                                                                                                                                                 |
 | --lora_target_modules                                   | The scope to enable LoRA module.                                        | default is ["q_proj","k_proj","v_proj","o_proj","down_proj","gate_proj","up_proj"]    |
 | --q_lora                                     | incompatible with `FSDP` and `ZeRO3` | This can | Using q_lora can improve LoRa performance
+| --rope_scaling_type   |        Method used to increase context length|   ['linear', 'dynamic'], "linear" refer to  simple linear interpolation,  "dynamic" refer to NTK-Aware Scaled RoPE|
+| --rope_scaling_factor |        Factor model length needs to be extended| float(math.ceil(model_max_length / max_position_embeddings))|
 
 An important consideration for the user is to determine the maximum model size that can be trained using the current system. Another significant issue is determining the optimal configuration for models of different scales. Below, I will provide some settings I have used and the related experiences
 
@@ -47,6 +49,19 @@ An important consideration for the user is to determine the maximum model size t
 | 7b       | 8         | zero2 | 16             | true   |
 | 13b      | 16        | zero2 | 8              | true   |
 | 70b      | 64        | zero3 | 2              | false  |
+
+## 🏒 Context Length 
+"The extrapolation of model length is a widely discussed area of research. The ability to extrapolate model length to some extent affects the application scenarios of the model. Research(e.g., ALiBi, KERPLE) on length extrapolation has evolved from previous `local attention mechanisms`  to forms such as **linear interpolation** and **NTK-Aware RoPE**. The latter two is characterized by simplicity of implementation, wide applicability, and good performance.
+
+These two methods are also the two approaches currently implemented in Transformers libraries."
+### Linear Interpolation
+[LMSYS ORG Blog](https://lmsys.org/blog/2023-06-29-longchat/) 
+
+
+### NTK-Aware RoPE
+[NTK Method Reddit](https://www.reddit.com/r/LocalLLaMA/comments/14lz7j5/ntkaware_scaled_rope_allows_llama_models_to_have/) 
+
+> 中文读者看 苏剑林这篇[博客](https://kexue.fm/archives/9675)
 
 
 ## 👀  Others

@@ -7,3 +7,6 @@
 [submodule "rabbit_autogptq"]
 	path = quantization/AutoGPTQ
 	url = https://github.com/PageIV/AutoGPTQ.git
+[submodule "sft/fluclight"]
+	path = sft/fluclight
+	url = https://github.com/SwordYork/fluctlight.git

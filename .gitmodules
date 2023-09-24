@@ -1,6 +1,6 @@
 [submodule "sft/FastChat"]
 	path = sft/FastChat
-	url = https://github.com/PageIV/FastChat.git
+	url = https://github.com/SwordYork/fluctlight.git
 [submodule "rabbit_tgi"]
 	path = serving/TGI
 	url = https://github.com/PageIV/text-generation-inference.git
